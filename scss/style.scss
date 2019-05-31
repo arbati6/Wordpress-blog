@@ -1,0 +1,55 @@
+/*
+Theme Name: Blog_v1
+Author: Rafal Fuczynski
+Version: 1.0
+*/
+
+$color-black: #000;
+$color-violet: #d191ff;
+$color-light-gray: #ebebeb;
+$color-dark-gray: #545454;
+
+$screen-xs-max: 360px;
+$screen-sm-max: 480px;
+$screen-md-max: 768px;
+$screen-lg-max: 1024px;
+$screen-xl-max: 1170px;
+
+@mixin xs {
+    @media (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+ }
+ @mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+ }
+ @mixin md {
+    @media (max-width: #{$screen-md-max}) {
+        @content;
+    }
+ }
+ @mixin lg {
+    @media (max-width: #{$screen-lg-max}) {
+        @content;
+    }
+ }
+ @mixin xl {
+    @media (max-width: #{$screen-xl-max}) {
+        @content;
+    }
+ }
+ @mixin rwd($screen) {
+    @media (max-width: $screen+'px') {
+        @content;
+    }
+ }
+
+
+@import "front_page";
+@import "header";
+@import "footer";
+@import "posts";
+@import "wp_editor_style";
+

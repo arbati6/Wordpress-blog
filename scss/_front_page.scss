@@ -1,0 +1,518 @@
+.main {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header-banner {
+  width: 100%;
+  height: 77px;
+  background: url(https://www.rafalfuczynski.com/blog/wp-content/themes/blog_v1/img/bg_top.png)
+    no-repeat;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  border-radius: 5px;
+
+  @include xl {
+    margin: 0 1rem;
+  }
+  @include md {
+    text-align: center;
+    height: 300px;
+    background: url(https://www.rafalfuczynski.com/blog/wp-content/themes/blog_v1/img/bg_top_mobile.png)
+      no-repeat;
+    background-size: cover;
+    background-position-y: 80%;
+  }
+
+  &__main-header {
+    font-size: 17px;
+    font-weight: 300;
+    align-self: center;
+    letter-spacing: -0.5px;
+
+    @include sm {
+      margin: 0 1rem;
+      line-height: 24px;
+    }
+  }
+}
+.posts-area {
+  width: 100%;
+  display: flex;
+
+  @include md {
+    flex-wrap: wrap;
+  }
+}
+.new-posts {
+  max-width: 62%;
+
+  @include xl {
+    max-width: 70%;
+  }
+  @include lg {
+    max-width: 55%;
+  }
+  @include md {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__header-container {
+    height: 70px;
+    border-bottom: 1px solid $color-light-gray;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 3rem 0;
+  }
+  &__header {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 1rem 1rem 0 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid $color-black;
+  }
+}
+.single-post {
+  display: grid;
+  margin: 0 0 6rem 0;
+  grid-template-areas: "img h2 fb" "img p fb";
+
+  @include xl {
+    margin: 0 1rem 6rem 1rem;
+  }
+  @include lg {
+    grid-template-areas: "img" "h2" "p" "fb";
+    max-width: 420px;
+  }
+  @include md {
+    margin: 0 auto 4rem auto;
+  }
+  @include sm {
+    margin: 0 1rem 4rem 1rem;
+  }
+  &__thumb {
+    grid-area: img;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__time--absolute {
+    position: absolute;
+    font-size: 11px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    pointer-events: none;
+    align-content: center;
+    justify-content: center;
+    background: #ffffffba;
+    color: $color-black;
+  }
+
+  &__img {
+    height: auto;
+    border-radius: 5px;
+
+    @include lg {
+      width: 100%;
+    }
+  }
+  &__title {
+    grid-area: h2;
+    line-height: 18px;
+    margin: 0 1rem;
+    align-self: end;
+    transition: 0.3s ease;
+
+    @include lg {
+      margin: 0.5rem 0;
+      max-width: 420px;
+    }
+    &--link {
+      font-size: 18px;
+      text-decoration: none;
+      color: $color-black;
+      letter-spacing: -0.5px;
+
+      @include lg {
+        font-size: 16px;
+      }
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+    }
+  }
+  &__excerpt {
+    grid-area: p;
+    font-size: 12px;
+    align-self: end;
+    margin: 0 1rem 0.1rem 1rem;
+    color: $color-dark-gray;
+
+    @include lg {
+      margin: 0;
+      max-width: 420px;
+    }
+
+    &--read-more {
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      color: $color-black;
+      font-size: 9px;
+      letter-spacing: -0.5px;
+      word-break: break-all;
+      transition: 0.3s ease;
+
+      @include md {
+        word-break: break-word;
+      }
+      .arrow-icon::before {
+        color: $color-violet;
+        font-weight: 700;
+      }
+      &:hover {
+        opacity: 0.8;
+        transition: 0.3s ease;
+        color: $color-violet;
+      }
+    }
+  }
+
+  &__fb-share {
+    grid-area: fb;
+    transform: rotate(90deg);
+    align-self: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: $color-black;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    transition: 0.3s ease;
+
+    @include lg {
+      justify-self: end;
+      margin: 1rem 0 0 0;
+      transform: none;
+      flex-basis: 100%;
+      width: 73px;
+    }
+
+    .fb-icon {
+      color: $color-violet;
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+      color: $color-violet;
+    }
+  }
+}
+// Newsletter Plugin
+.newsletter--js-insert {
+  background: url(https://www.rafalfuczynski.com/blog/wp-content/themes/blog_v1/img/bg_newsletter.png)
+    no-repeat;
+  height: 154px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 1170px;
+  margin: 0 0 6rem 0;
+  outline: 4rem solid #fff;
+  flex-wrap: wrap;
+  border-radius: 5px;
+
+  @include xl {
+    width: 94vw;
+    margin: 0 1rem 6rem 1.5rem;
+  }
+  @include md {
+    width: 96%;
+    margin: 0 2% 6rem 2%;
+    background: url(https://www.rafalfuczynski.com/blog/wp-content/themes/blog_v1/img/bg_newsletter_mobile.png)
+      no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+  }
+  @include sm {
+    height: 240px;
+    background-position-x: 40%;
+  }
+}
+.newsletter__header {
+  flex-basis: 100%;
+  margin: 2rem 3rem 0 3rem;
+  text-align: right;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+
+  @include rwd(547) {
+    font-size: 20px;
+  }
+  @include rwd(407) {
+    text-align: center;
+  }
+  &--classifier {
+    font-style: normal;
+    font-weight: 700;
+    color: $color-violet;
+  }
+}
+.mailpoet_form {
+  margin: 0 4.3rem;
+  height: 90px;
+
+  @include rwd(658) {
+    margin: 0 1rem;
+  }
+  @include sm {
+    margin: 0 auto;
+  }
+}
+.mailpoet_paragraph {
+  float: left;
+
+  @include rwd(407) {
+    float: none;
+    margin: 0 auto;
+  }
+}
+.mailpoet_submit {
+  width: 109px;
+  height: 33px;
+  background: $color-violet;
+  border-radius: 16.5px;
+  border: none;
+  font-family: inherit;
+  -webkit-appearance: none;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  padding: 0;
+  margin: 0.5rem 1rem 0 1rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  @include sm {
+    margin: 0.5rem 3rem 0 1rem;
+  }
+  @include rwd(407) {
+    width: 250px;
+    height: 43px;
+    border-radius: 21.5px;
+    margin: 0.5rem auto;
+  }
+  &:hover {
+    transition: 0.3s ease;
+    color: #fff;
+    background: $color-black;
+  }
+}
+.mailpoet_text {
+  border: none;
+  border-bottom: 1px solid $color-black;
+  outline: none;
+  margin: 0.8rem 0 0 0;
+  background: none;
+  appearance: none;
+  line-height: 24px;
+  border-radius: 0;
+  font-family: inherit;
+  text-indent: 0.6rem;
+
+  &::-webkit-input-placeholder {
+    opacity: 1;
+    color: $color-black;
+    font-weight: 700;
+  }
+  &::-moz-input-placeholder {
+    opacity: 1;
+    color: $color-black;
+    font-weight: 700;
+  }
+  @include rwd(407) {
+    width: 250px !important;
+    margin: 0 auto 1.3rem auto;
+  }
+}
+// WP pagination
+.new-posts__pagination {
+  font-size: 14px;
+  letter-spacing: 6px;
+
+  @include xl {
+    margin: 0 0 0 1rem;
+  }
+  @include md {
+    margin: 0 auto;
+    max-width: 420px;
+  }
+  @include sm {
+    margin: 0 1rem;
+  }
+  .page-numbers {
+    color: $color-black;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+    }
+  }
+  .page-numbers.current {
+    font-weight: 700;
+    color: $color-violet;
+  }
+  .next.page-numbers {
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    border: 2px solid $color-violet;
+    padding: 7px 18px;
+    border-radius: 16.5px;
+    font-size: 12px;
+    transition: 0.3s ease;
+
+    @include xs {
+      padding: 6px 10px;
+      border-radius: 15px;
+      font-size: 10px;
+    }
+    &:hover {
+      transition: 0.3s ease;
+      background: $color-violet;
+      color: $color-black;
+      opacity: 1;
+    }
+  }
+  .prev.page-numbers {
+    @extend .next;
+  }
+}
+
+.classifier-posts {
+  margin: 90px 0 0 0;
+  border-left: 1px solid $color-light-gray;
+
+  @include rwd(854) {
+    display: none;
+  }
+}
+
+.popular-posts {
+  max-width: 38%;
+
+  @include lg {
+    max-width: 45%;
+  }
+  @include md {
+    max-width: 100%;
+    width: 100%;
+  }
+  &__header-container {
+    @extend .new-posts__header-container;
+  }
+  &__header {
+    @extend .new-posts__header;
+  }
+}
+.single-popular-post {
+  grid-template-columns: 57px auto;
+  grid-template-areas: "img h3" "img a";
+  display: grid;
+  margin: 0 0 4rem 1.5rem;
+
+  @include md {
+    max-width: 420px;
+    margin: 4rem auto;
+  }
+  @include sm {
+    margin: 0 1rem 4rem 1rem;
+  }
+  &__thumb {
+    width: 57px;
+    height: 57px;
+    grid-area: img;
+  }
+  &__img {
+    object-fit: cover;
+    object-position: 0 0;
+    height: 57px;
+    border-radius: 5px;
+  }
+  &__title {
+    line-height: 16px;
+    margin: 0 1rem;
+    grid-area: h3;
+    align-self: center;
+    transition: 0.3s ease;
+
+    &--link {
+      color: $color-black;
+      font-size: 14px;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+
+      @include lg {
+        font-size: 12px;
+      }
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+    }
+  }
+  &--read-more {
+    grid-area: a;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: $color-black;
+    font-size: 9px;
+    letter-spacing: -0.5px;
+    margin: 0 1rem;
+    align-self: self-end;
+    transition: 0.3s ease;
+
+    .arrow-icon::before {
+      color: $color-violet;
+      font-weight: 700;
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+      color: $color-violet;
+    }
+  }
+}
+.side-bar {
+  margin: 22rem 0 0 0;
+
+  @include lg {
+    margin: 49rem 0 0 0;
+  }
+  @include md {
+    margin: 0;
+  }
+
+  &__banner {
+    max-width: 100%;
+    margin: 0 3rem 3rem 1.5rem;
+
+    @include xl {
+      max-width: 80%;
+      margin: 0 0 3rem 1.5rem;
+    }
+    @include md {
+      display: block;
+      margin: 0 auto 3rem auto;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+.main-document {
+  margin: 0;
+  font-family: Muli;
+  background: #fff;
+  overflow-x: hidden;
+}
+@include lg {
+
+  html {
+    position: relative;
+    overflow-x: hidden;
+  }
+  .main-document {
+    position: relative;
+  }
+}
+.header {
+  max-width: 1170px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1.5rem auto 0 auto;
+  position: relative;
+
+  @include lg {
+    justify-content: flex-end;
+  }
+}
+.main-logo {
+  align-self: center;
+
+  @include lg {
+    flex-basis: 100%;
+  }
+  &__img {
+    margin: 0 0 0 1rem;
+    width: 146px;
+  }
+}
+.search-posts {
+  border-bottom: 1px solid $color-light-gray;
+  outline: none;
+  padding: 0.4rem;
+  align-self: center;
+
+  @include lg {
+    margin: 0 3rem 0 0;
+  }
+  @include md {
+    margin: 0 2rem 0 0;
+  }
+  @include sm {
+    margin: 2.5rem 1rem 1rem 1rem;
+    width: 100%;
+  }
+  &__field {
+    width: 290px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    letter-spacing: -0.5px;
+    font-weight: 300;
+    font-size: 14px;
+
+    @include md {
+      width: 200px;
+    }
+    @include rwd(562) {
+      width: 130px;
+      margin: 0 0 0 1rem;
+    }
+  }
+  &__submit {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    cursor: pointer;
+    background: $color-violet;
+    transition: 0.3s ease;
+
+    .search-icon {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      &::before {
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 20px;
+      }
+    }
+    &:hover {
+      transition: 0.3s ease;
+      color: #fff;
+      background: $color-black;
+    }
+  }
+}
+.frino-banner {
+  align-self: center;
+
+  @include lg {
+    margin: 1rem 0;
+  }
+  @include sm {
+    margin: 1.5rem 1rem;
+    width: 100%;
+  }
+  &__img {
+    margin: 0 1rem 0 0;
+    transition: 0.3s ease;
+    max-width: 360px;
+
+    @include lg {
+      max-width: 320px;
+    }
+    @include md {
+      max-width: 260px;
+    }
+    @include rwd(562) {
+      max-width: 220px;
+    }
+    @include sm {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.3s ease;
+    }
+  }
+}
+.main-menu {
+  display: flex;
+  height: 80px;
+  margin: 0 auto;
+  align-items: center;
+
+  @include lg {
+    display: none;
+  }
+}
+.menu {
+  padding: 0;
+}
+.menu-item {
+  display: inline;
+  margin: 0 1.3rem;
+  padding: 0 0 1.9rem 0;
+}
+.menu-item a {
+  text-decoration: none;
+  color: $color-black;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  padding: 0 0 1.9rem 0;
+
+  &:hover {
+    border-bottom: 1px solid $color-black;
+
+    @include lg {
+      border-bottom: none;
+    }
+  }
+}
+.current-menu-item a {
+  border-bottom: 1px solid $color-black;
+  pointer-events: none;
+
+  @include lg {
+    border-bottom: none;
+  }
+}
+.menu-item-1273 {
+  font-weight: 700;
+}
+.open-menu-overlay {
+  position: fixed;
+  background: $color-black;
+  width: 100%;
+  height: 120vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 25;
+  top: 0;
+}
+.hamburger-menu {
+  position: absolute;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+  padding: 0.6rem 1rem 0.6rem 4rem;
+
+  .menu-icon {
+    font-size: 17px;
+    line-height: 3px;
+    font-weight: 700;
+  }
+  @include lg {
+    display: block;
+  }
+}
+.main-menu-mobile {
+  position: fixed;
+  background: #fff;
+  top: -1.5rem;
+  width: 80%;
+  height: 120vh;
+  z-index: 50;
+  right: -100%;
+  transition: 0.3s ease;
+
+  & .menu {
+    margin: 5rem 0 0 0;
+  }
+  & .menu-item {
+    display: block;
+    margin: 2rem 2.5rem;
+    padding: 0;
+    text-align: right;
+  }
+}
